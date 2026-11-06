@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+ <ItemGroup Label="ProjectConfigurations"><ProjectConfiguration Include="Release|Win32"><Configuration>Release</Configuration><Platform>Win32</Platform></ProjectConfiguration></ItemGroup>
+ <PropertyGroup Label="Globals"><ProjectGuid>{b2749313-6172-4488-9987-980567211293}</ProjectGuid><WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion></PropertyGroup>
+ <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+ <PropertyGroup Label="Configuration"><ConfigurationType>Application</ConfigurationType><PlatformToolset>v143</PlatformToolset><CharacterSet>MultiByte</CharacterSet></PropertyGroup>
+ <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+ <PropertyGroup><OutDir>$(ProjectDir)bin\</OutDir><IntDir>$(ProjectDir)build\</IntDir><TargetName>device_controller</TargetName></PropertyGroup>
+ <ItemDefinitionGroup><ClCompile><AdditionalIncludeDirectories>.;..\FreeRTOS\Source\include;..\FreeRTOS\Source\portable\MSVC-MingW;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories><PreprocessorDefinitions>WIN32;WIN32_LEAN_AND_MEAN;_WIN32_WINNT=0x0601;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions><RuntimeLibrary>MultiThreaded</RuntimeLibrary><WarningLevel>Level3</WarningLevel></ClCompile><Link><SubSystem>Console</SubSystem><AdditionalDependencies>ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies></Link></ItemDefinitionGroup>
+ <ItemGroup>
+  <ClCompile Include="controller.c" />
+  <ClCompile Include="..\FreeRTOS\Source\tasks.c" /><ClCompile Include="..\FreeRTOS\Source\queue.c" /><ClCompile Include="..\FreeRTOS\Source\list.c" />
+  <ClCompile Include="..\FreeRTOS\Source\portable\MSVC-MingW\port.c" /><ClCompile Include="..\FreeRTOS\Source\portable\MemMang\heap_4.c" />
+ </ItemGroup>
+ <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+</Project>
